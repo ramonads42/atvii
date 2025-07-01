@@ -2,15 +2,7 @@
 
 Este é um projeto que utiliza Node.js e React. Para rodar corretamente, é necessário executar alguns scripts específicos antes de iniciar o servidor de desenvolvimento.
 
-## Estrutura do Projeto
-
-- `out/main.js`: Script principal da pasta `out`
-- `app/main.js`: Script principal da pasta `app`
-- `npm start`: Inicia a aplicação React no modo de desenvolvimento
-
 ## Como Executar
-
-Siga os passos abaixo no terminal, **na ordem** indicada:
 
 1. Execute o script da pasta `out`:
 
