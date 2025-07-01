@@ -4,20 +4,19 @@ Este é um projeto que utiliza Node.js e React. Para rodar corretamente, é nece
 
 ## Como Executar
 
-1. Execute o script da pasta `out`:
+1.  Execute o comando npm install na base do projeto:
+
+2. Execute o script da pasta `out`:
 
    ```bash
    node out/app/main.js
 Execute o script da pasta app:
 
-bash
-Copy
-Edit
-node app/main.js
-Na raiz do projeto, inicie a aplicação:
+3. Execute o script da pasta `out`:
 
-bash
-Copy
-Edit
-npm start
+   ```bash
+   node out/app/main.js
+Execute o comando npm start na base do projeto:
+
+
 A aplicação estará disponível em http://localhost:3000.
