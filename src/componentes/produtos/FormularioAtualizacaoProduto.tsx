@@ -12,7 +12,7 @@ type Props = {
 
 type State = {
     nome: string;
-    valor: string; // Manter como string para input, converter para number ao salvar
+    valor: string; 
     descricao: string;
 };
 
@@ -21,7 +21,7 @@ export default class FormularioAtualizacaoProduto extends Component<Props, State
         super(props);
         this.state = {
             nome: props.produto ? props.produto.getNome : '',
-            valor: props.produto ? props.produto.getValor.toFixed(2) : '', // Formata para 2 casas decimais
+            valor: props.produto ? props.produto.getValor.toFixed(2) : '', 
             descricao: props.produto ? props.produto.getDescricao : '',
         };
         this.handleChange = this.handleChange.bind(this);
@@ -62,8 +62,7 @@ export default class FormularioAtualizacaoProduto extends Component<Props, State
         this.props.atualizarProduto(nomeProdutoOriginal, nome, valorNumerico, descricao);
         this.props.atualizarDados();
 
-        // REMOVIDO: alert(`Produto "${nomeProdutoOriginal}" atualizado para "${nome}" com sucesso!`);
-        this.props.seletorView('Produtos', event); // Voltar para a lista de produtos
+        this.props.seletorView('Produtos', event); 
     }
 
     render() {

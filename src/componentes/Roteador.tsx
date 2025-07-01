@@ -24,11 +24,10 @@ import RegistroConsumo from "./consumo/RegistroConsumo";
 
 import RelatorioClientesMaisConsumiram from "./relatorios/RelatorioClientesMaisConsumiram";
 import RelatorioProdutosServicosMaisConsumidos from "./relatorios/RelatorioProdutosServicosMaisConsumidos";
-import RelatorioConsumoPorTipoRaca from "./relatorios/RelatorioConsumoPorTipoRaca"; // Este será "Mais Consumidos por Raça"
+import RelatorioConsumoPorTipoRaca from "./relatorios/RelatorioConsumoPorTipoRaca";
 import RelatorioClientesMaisGastaram from "./relatorios/RelatorioClientesMaisGastaram";
-import RelatorioConsumoPorTipo from "./relatorios/RelatorioConsumoPorTipo"; // Este será "Mais Consumidos por Tipo"
+import RelatorioConsumoPorTipo from "./relatorios/RelatorioConsumoPorTipo"; 
 
-// Importar o serviço da empresa
 import empresaService from "../servicos/EmpresaService";
 import Cliente from "../modelo/cliente";
 import Produto from "../modelo/produto";
@@ -265,7 +264,7 @@ export default class Roteador extends Component<{}, AppState> {
                 );
                 break;
 
-            // Relatórios - ALTERAÇÕES AQUI!
+            // Relatórios 
             case 'Relatórios':
                 conteudo = (
                     <div className="container-fluid">
@@ -280,7 +279,6 @@ export default class Roteador extends Component<{}, AppState> {
                             <button type="button" className="list-group-item list-group-item-action" onClick={(e) => this.selecionarView('Relatório Prod/Serv + Consumo', e)}>
                                 Produtos e Serviços Mais Consumidos (Geral)
                             </button>
-                            {/* Nomes dos relatórios alterados aqui */}
                             <button type="button" className="list-group-item list-group-item-action" onClick={(e) => this.selecionarView('Mais Consumidos por Raça', e)}>
                                 Mais Consumidos por Raça
                             </button>
@@ -312,7 +310,6 @@ export default class Roteador extends Component<{}, AppState> {
                     getRelatorio={empresaService.getRelatorioProdutosServicosMaisConsumidos.bind(empresaService)}
                 />;
                 break;
-            {/* Nomes dos cases alterados aqui */}
             case 'Mais Consumidos por Raça':
                 conteudo = <RelatorioConsumoPorTipoRaca
                     tema="#e3f2fd"

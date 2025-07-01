@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Cliente from '../../modelo/cliente'; // Importar o modelo Cliente
+import Cliente from '../../modelo/cliente';
 
 type Props = {
     tema: string;
     seletorView: Function;
-    cliente: Cliente; // O cliente a ser excluído será passado via props
-    excluirCliente: (cpfCliente: string) => void; // Função de exclusão do service
-    atualizarDados: Function; // Para notificar o Roteador sobre a mudança
+    cliente: Cliente; 
+    excluirCliente: (cpfCliente: string) => void; 
+    atualizarDados: Function; 
 };
 
 export default class ConfirmacaoExclusaoCliente extends Component<Props> {
@@ -26,14 +26,12 @@ export default class ConfirmacaoExclusaoCliente extends Component<Props> {
         const cpfCliente = this.props.cliente.getCpf.getValor;
         const nomeCliente = this.props.cliente.nome;
 
-        // Chamada ao método do EmpresaService
         this.props.excluirCliente(cpfCliente);
 
-        // Notificar o Roteador para atualizar os dados globais
         this.props.atualizarDados();
 
         alert(`Cliente "${nomeCliente}" (CPF: ${cpfCliente}) excluído com sucesso!`);
-        this.props.seletorView('Clientes', event); // Voltar para a lista de clientes
+        this.props.seletorView('Clientes', event); 
     }
 
     render() {

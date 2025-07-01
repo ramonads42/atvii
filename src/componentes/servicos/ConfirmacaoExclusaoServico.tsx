@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Servico from '../../modelo/servico'; // Importar o modelo Servico
+import Servico from '../../modelo/servico'; 
 
 type Props = {
     tema: string;
     seletorView: Function;
-    servico: Servico; // O serviço a ser excluído será passado via props
-    excluirServico: (nomeServico: string) => void; // Função de exclusão do service
-    atualizarDados: Function; // Para notificar o Roteador sobre a mudança
+    servico: Servico; 
+    excluirServico: (nomeServico: string) => void; 
+    atualizarDados: Function; 
 };
 
 export default class ConfirmacaoExclusaoServico extends Component<Props> {
@@ -25,14 +25,12 @@ export default class ConfirmacaoExclusaoServico extends Component<Props> {
 
         const nomeServico = this.props.servico.getNome;
 
-        // Chamada ao método do EmpresaService
         this.props.excluirServico(nomeServico);
 
-        // Notificar o Roteador para atualizar os dados globais
         this.props.atualizarDados();
 
         alert(`Serviço "${nomeServico}" excluído com sucesso!`);
-        this.props.seletorView('Serviços', event); // Voltar para a lista de serviços
+        this.props.seletorView('Serviços', event); 
     }
 
     render() {

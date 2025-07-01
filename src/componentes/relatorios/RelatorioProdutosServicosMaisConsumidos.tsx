@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 type Props = {
     tema: string;
     seletorView: Function;
-    getRelatorio: () => { nome: string, tipo: 'Produto' | 'Serviço', quantidade: number }[]; // Função para obter o relatório do service
+    getRelatorio: () => { nome: string, tipo: 'Produto' | 'Serviço', quantidade: number }[]; 
 };
 
 type RelatorioItem = {
@@ -31,7 +31,6 @@ export default class RelatorioProdutosServicosMaisConsumidos extends Component<P
     }
 
     carregarRelatorio() {
-        // Chama a função do EmpresaService para obter os dados reais do relatório
         const dadosRelatorio = this.props.getRelatorio();
         this.setState({ relatorio: dadosRelatorio });
     }
@@ -54,7 +53,7 @@ export default class RelatorioProdutosServicosMaisConsumidos extends Component<P
                         </thead>
                         <tbody>
                             {relatorio.map((item, index) => (
-                                <tr key={index}> {/* Usar index como key é aceitável se a lista não muda de ordem */}
+                                <tr key={index}> 
                                     <td>{item.tipo}</td>
                                     <td>{item.nome}</td>
                                     <td>{item.quantidade}</td>

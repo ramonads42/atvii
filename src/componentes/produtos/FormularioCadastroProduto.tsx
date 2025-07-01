@@ -10,7 +10,7 @@ type Props = {
 
 type State = {
     nome: string;
-    valor: string; // Manter como string para input, converter para number ao salvar
+    valor: string; 
     descricao: string;
 };
 
@@ -44,8 +44,7 @@ export default class FormularioCadastroProduto extends Component<Props, State> {
         this.props.cadastrarProduto(nome, valorNumerico, descricao);
         this.props.atualizarDados();
 
-        // REMOVIDO: alert(`Produto "${nome}" cadastrado com sucesso!`);
-        this.props.seletorView('Produtos', event); // Voltar para a lista de produtos
+        this.props.seletorView('Produtos', event); 
     }
 
     render() {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Cliente from '../../modelo/cliente'; // Certifique-se de que o caminho está correto
+import Cliente from '../../modelo/cliente'; 
 
 type Props = {
     tema: string;
@@ -13,7 +13,7 @@ type State = {
     nome: string;
     nomeSocial: string;
     cpf: string;
-    dataEmissaoCpf: string; // Formato dd/mm/yyyy
+    dataEmissaoCpf: string; 
 };
 
 export default class FormularioCadastroCliente extends Component<Props, State> {
@@ -46,8 +46,7 @@ export default class FormularioCadastroCliente extends Component<Props, State> {
         this.props.cadastrarCliente(nome, nomeSocial, cpf, dataEmissaoCpf);
         this.props.atualizarDados();
 
-        // REMOVIDO: alert(`Cliente ${nome} cadastrado com sucesso!`);
-        this.props.seletorView('Clientes', event); // Voltar para a lista de clientes
+        this.props.seletorView('Clientes', event); 
     }
 
     render() {

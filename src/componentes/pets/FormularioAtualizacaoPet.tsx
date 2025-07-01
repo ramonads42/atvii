@@ -67,8 +67,7 @@ export default class FormularioAtualizacaoPet extends Component<Props, State> {
         this.props.atualizarPet(pet.cpfCliente, pet.nome, nome, tipo, raca, genero);
         this.props.atualizarDados();
 
-        // REMOVIDO: alert(`Pet "${pet.nome}" atualizado para "${nome}" (simulação)!`);
-        this.props.seletorView('Pets', event); // Voltar para a lista de pets
+        this.props.seletorView('Pets', event); 
     }
 
     render() {

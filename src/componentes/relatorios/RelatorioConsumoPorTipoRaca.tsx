@@ -40,10 +40,8 @@ export default class RelatorioConsumoPorTipoRaca extends Component<Props, State>
         const { tema, seletorView } = this.props;
         const { relatorio } = this.state;
 
-        // Agrupar por tipoRaca para exibição
         const groupedReports: { [key: string]: RelatorioItem[] } = {};
         relatorio.forEach(item => {
-            // Garante que o tipoRaca é uma string válida antes de usar como chave de grupo
             const groupKey = item.tipoRaca && item.tipoRaca.trim() !== '' ? item.tipoRaca : "NÃO ESPECIFICADO";
             if (!groupedReports[groupKey]) {
                 groupedReports[groupKey] = [];
@@ -59,7 +57,6 @@ export default class RelatorioConsumoPorTipoRaca extends Component<Props, State>
                 {Object.keys(groupedReports).length > 0 ? (
                     sortedKeys.map(tipoRacaKey => (
                         <div key={tipoRacaKey} className="mb-4">
-                            {/* Garante que o título do grupo não seja 'UNDEFINED' */}
                             <h3>--- {tipoRacaKey.toUpperCase()} ---</h3>
                             <table className="table table-striped">
                                 <thead>
@@ -72,7 +69,6 @@ export default class RelatorioConsumoPorTipoRaca extends Component<Props, State>
                                 <tbody>
                                     {groupedReports[tipoRacaKey].map((item, index) => (
                                         <tr key={index}>
-                                            {/* Acessa as propriedades corretas dos itens */}
                                             <td>{item.tipo}</td>
                                             <td>{item.nome}</td>
                                             <td>{item.quantidade}</td>

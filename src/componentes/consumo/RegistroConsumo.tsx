@@ -91,7 +91,6 @@ export default class RegistroConsumo extends Component<Props, State> {
             itemTipo: '',
             itemId: null,
         });
-        // REMOVIDO: alert(`Consumo de ${itemConsumido.getNome} registrado para ${cliente.nome}!`);
     }
 
     render() {

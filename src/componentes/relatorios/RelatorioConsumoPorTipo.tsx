@@ -42,7 +42,6 @@ export default class RelatorioConsumoPorTipo extends Component<Props, State> {
 
         const groupedReports: { [key: string]: RelatorioItem[] } = {};
         relatorio.forEach(item => {
-            // Garante que o tipoPet é uma string válida antes de usar como chave de grupo
             const groupKey = item.tipoPet && item.tipoPet.trim() !== '' ? item.tipoPet : "NÃO ESPECIFICADO";
             if (!groupedReports[groupKey]) {
                 groupedReports[groupKey] = [];
@@ -58,7 +57,6 @@ export default class RelatorioConsumoPorTipo extends Component<Props, State> {
                 {Object.keys(groupedReports).length > 0 ? (
                     sortedKeys.map(tipoPetKey => (
                         <div key={tipoPetKey} className="mb-4">
-                            {/* Garante que o título do grupo não seja 'UNDEFINED' */}
                             <h3>--- {tipoPetKey.toUpperCase()} ---</h3>
                             <table className="table table-striped">
                                 <thead>
@@ -71,7 +69,6 @@ export default class RelatorioConsumoPorTipo extends Component<Props, State> {
                                 <tbody>
                                     {groupedReports[tipoPetKey].map((item, index) => (
                                         <tr key={index}>
-                                            {/* Acessa as propriedades corretas dos itens */}
                                             <td>{item.tipoItem}</td>
                                             <td>{item.nomeItem}</td>
                                             <td>{item.quantidade}</td>

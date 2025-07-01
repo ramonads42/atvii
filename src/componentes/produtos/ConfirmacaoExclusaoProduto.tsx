@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Produto from '../../modelo/produto'; // Importar o modelo Produto
+import Produto from '../../modelo/produto'; 
 
 type Props = {
     tema: string;
     seletorView: Function;
-    produto: Produto; // O produto a ser excluído será passado via props
-    excluirProduto: (nomeProduto: string) => void; // Função de exclusão do service
-    atualizarDados: Function; // Para notificar o Roteador sobre a mudança
+    produto: Produto; 
+    excluirProduto: (nomeProduto: string) => void; 
+    atualizarDados: Function; 
 };
 
 export default class ConfirmacaoExclusaoProduto extends Component<Props> {
@@ -25,14 +25,12 @@ export default class ConfirmacaoExclusaoProduto extends Component<Props> {
 
         const nomeProduto = this.props.produto.getNome;
 
-        // Chamada ao método do EmpresaService
         this.props.excluirProduto(nomeProduto);
 
-        // Notificar o Roteador para atualizar os dados globais
         this.props.atualizarDados();
 
         alert(`Produto "${nomeProduto}" excluído com sucesso!`);
-        this.props.seletorView('Produtos', event); // Voltar para a lista de produtos
+        this.props.seletorView('Produtos', event); 
     }
 
     render() {

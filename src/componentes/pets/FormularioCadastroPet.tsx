@@ -55,8 +55,7 @@ export default class FormularioCadastroPet extends Component<Props, State> {
         this.props.cadastrarPet(cpfCliente, nome, tipo, raca, genero);
         this.props.atualizarDados();
 
-        // REMOVIDO: alert(`Pet "${nome}" cadastrado com sucesso para o cliente ${cpfCliente}!`);
-        this.props.seletorView('Pets', event); // Voltar para a lista de pets
+        this.props.seletorView('Pets', event); 
     }
 
     render() {

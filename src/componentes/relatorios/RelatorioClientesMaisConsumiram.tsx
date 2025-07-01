@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 type Props = {
     tema: string;
     seletorView: Function;
-    getRelatorio: () => { posicao: number, cliente: string, quantidadeProdutos: number, quantidadeServicos: number, total: number }[]; // Função para obter o relatório do service
+    getRelatorio: () => { posicao: number, cliente: string, quantidadeProdutos: number, quantidadeServicos: number, total: number }[]; 
 };
 
 type RelatorioItem = {
@@ -33,7 +33,6 @@ export default class RelatorioClientesMaisConsumiram extends Component<Props, St
     }
 
     carregarRelatorio() {
-        // Chama a função do EmpresaService para obter os dados reais do relatório
         const dadosRelatorio = this.props.getRelatorio();
         this.setState({ relatorio: dadosRelatorio });
     }

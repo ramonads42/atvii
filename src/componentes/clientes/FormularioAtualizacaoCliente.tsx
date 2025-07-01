@@ -53,8 +53,7 @@ export default class FormularioAtualizacaoCliente extends Component<Props, State
         this.props.atualizarCliente(cpfCliente, nome, nomeSocial);
         this.props.atualizarDados();
 
-        // REMOVIDO: alert(`Cliente ${nome} (CPF: ${cpfCliente}) atualizado com sucesso!`);
-        this.props.seletorView('Clientes', event); // Voltar para a lista de clientes
+        this.props.seletorView('Clientes', event); 
     }
 
     render() {

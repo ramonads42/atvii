@@ -1,21 +1,19 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Servico from "../../modelo/servico"; // Importar o modelo Servico
+import Servico from "../../modelo/servico"; 
 
 type Props = {
     tema: string;
     seletorView: Function;
     selecionarViewComItem: Function;
-    servicos: Servico[]; // A lista de serviços agora vem via props do Roteador
-    atualizarDados: Function; // Função para pedir ao Roteador para atualizar os dados
+    servicos: Servico[]; 
+    atualizarDados: Function; 
 };
 
 export default class ListaServicos extends Component<Props> {
     constructor(props: Props | Readonly<Props>) {
         super(props);
-        // O estado 'servicos' foi movido para o Roteador, então este componente não precisa mais dele aqui.
-        // Ele apenas renderiza o que recebe via props.
+
     }
 
     render() {
@@ -36,21 +34,19 @@ export default class ListaServicos extends Component<Props> {
                     <tbody>
                         {servicos.length > 0 ? (
                             servicos.map((servico, index) => (
-                                <tr key={`${servico.getNome}-${index}`}> {/* Usar nome e index para chave única temporária */}
+                                <tr key={`${servico.getNome}-${index}`}> 
                                     <td>{servico.getNome}</td>
                                     <td>R$ {servico.getValor.toFixed(2)}</td>
                                     <td>{servico.getDescricao}</td>
                                     <td>
                                         <button
                                             className="btn btn-sm btn-primary me-2"
-                                            // Passa o serviço completo para a tela de atualização
                                             onClick={(e) => selecionarViewComItem('Atualizar Serviço', servico, e)}
                                         >
                                             Editar
                                         </button>
                                         <button
                                             className="btn btn-sm btn-danger"
-                                            // Passa o serviço completo para a tela de exclusão
                                             onClick={(e) => selecionarViewComItem('Excluir Serviço', servico, e)}
                                         >
                                             Excluir

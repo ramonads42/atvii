@@ -1,21 +1,19 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Produto from "../../modelo/produto"; // Importar o modelo Produto
+import Produto from "../../modelo/produto"; 
 
 type Props = {
     tema: string;
     seletorView: Function;
     selecionarViewComItem: Function;
-    produtos: Produto[]; // A lista de produtos agora vem via props do Roteador
-    atualizarDados: Function; // Função para pedir ao Roteador para atualizar os dados
+    produtos: Produto[]; 
+    atualizarDados: Function; 
 };
 
 export default class ListaProdutos extends Component<Props> {
     constructor(props: Props | Readonly<Props>) {
         super(props);
-        // O estado 'produtos' foi movido para o Roteador, então este componente não precisa mais dele aqui.
-        // Ele apenas renderiza o que recebe via props.
+
     }
 
     render() {
@@ -36,21 +34,19 @@ export default class ListaProdutos extends Component<Props> {
                     <tbody>
                         {produtos.length > 0 ? (
                             produtos.map((produto, index) => (
-                                <tr key={`${produto.getNome}-${index}`}> {/* Usar nome e index para chave única temporária */}
+                                <tr key={`${produto.getNome}-${index}`}> 
                                     <td>{produto.getNome}</td>
                                     <td>R$ {produto.getValor.toFixed(2)}</td>
                                     <td>{produto.getDescricao}</td>
                                     <td>
                                         <button
                                             className="btn btn-sm btn-primary me-2"
-                                            // Passa o produto completo para a tela de atualização
                                             onClick={(e) => selecionarViewComItem('Atualizar Produto', produto, e)}
                                         >
                                             Editar
                                         </button>
                                         <button
                                             className="btn btn-sm btn-danger"
-                                            // Passa o produto completo para a tela de exclusão
                                             onClick={(e) => selecionarViewComItem('Excluir Produto', produto, e)}
                                         >
                                             Excluir

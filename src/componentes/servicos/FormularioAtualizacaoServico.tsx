@@ -12,7 +12,7 @@ type Props = {
 
 type State = {
     nome: string;
-    valor: string; // Manter como string para input, converter para number ao salvar
+    valor: string; 
     descricao: string;
 };
 
@@ -21,7 +21,7 @@ export default class FormularioAtualizacaoServico extends Component<Props, State
         super(props);
         this.state = {
             nome: props.servico ? props.servico.getNome : '',
-            valor: props.servico ? props.servico.getValor.toFixed(2) : '', // Formata para 2 casas decimais
+            valor: props.servico ? props.servico.getValor.toFixed(2) : '', 
             descricao: props.servico ? props.servico.getDescricao : '',
         };
         this.handleChange = this.handleChange.bind(this);
@@ -62,8 +62,7 @@ export default class FormularioAtualizacaoServico extends Component<Props, State
         this.props.atualizarServico(nomeServicoOriginal, nome, valorNumerico, descricao);
         this.props.atualizarDados();
 
-        // REMOVIDO: alert(`Serviço "${nomeServicoOriginal}" atualizado para "${nome}" com sucesso!`);
-        this.props.seletorView('Serviços', event); // Voltar para a lista de serviços
+        this.props.seletorView('Serviços', event); 
     }
 
     render() {

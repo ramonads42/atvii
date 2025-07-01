@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Pet from '../../modelo/pet'; // Importar o modelo Pet
+import Pet from '../../modelo/pet'; 
 
 type PetDataComCliente = {
     nome: string;
@@ -13,9 +13,9 @@ type PetDataComCliente = {
 type Props = {
     tema: string;
     seletorView: Function;
-    pet: PetDataComCliente; // O pet a ser excluído será passado via props
-    excluirPet: (cpfCliente: string, nomePet: string) => void; // Função de exclusão do service
-    atualizarDados: Function; // Para notificar o Roteador sobre a mudança
+    pet: PetDataComCliente; 
+    excluirPet: (cpfCliente: string, nomePet: string) => void; 
+    atualizarDados: Function; 
 };
 
 export default class ConfirmacaoExclusaoPet extends Component<Props> {
@@ -33,14 +33,12 @@ export default class ConfirmacaoExclusaoPet extends Component<Props> {
 
         const { pet } = this.props;
 
-        // Chamada ao método do EmpresaService
         this.props.excluirPet(pet.cpfCliente, pet.nome);
 
-        // Notificar o Roteador para atualizar os dados globais
         this.props.atualizarDados();
 
         alert(`Pet "${pet.nome}" do cliente ${pet.cpfCliente} excluído com sucesso!`);
-        this.props.seletorView('Pets', event); // Voltar para a lista de pets
+        this.props.seletorView('Pets', event); 
     }
 
     render() {
