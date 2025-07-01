@@ -15,7 +15,7 @@ Siga os passos abaixo no terminal, **na ordem** indicada:
 1. Execute o script da pasta `out`:
 
    ```bash
-   node out/main.js
+   node out/app/main.js
 Execute o script da pasta app:
 
 bash
