@@ -1,6 +1,7 @@
 # ATVII
 
 Este é um projeto que utiliza Node.js e React. Para rodar corretamente, é necessário executar alguns scripts específicos antes de iniciar o servidor de desenvolvimento.
+Versão do NODE: v16
 
 ## Como Executar
 
